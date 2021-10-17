@@ -96,3 +96,17 @@ h1 {
     border-radius: 18px;
     margin-bottom: 2rem;
 }
+
+/* Flexbox */
+@media screen and (min-width : 480px) {
+    .flexContainer{
+        display: flex;
+    }
+    .teams-container{
+        flex-basis: 50%;
+    }
+    .main{
+        flex-basis:50%;
+        border-right:#F69A56 1rem solid;
+    }
+}
