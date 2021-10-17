@@ -14,8 +14,9 @@ body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
 }
-.container{
-    align-items:center;
+
+.container {
+    align-items: center;
 }
 
 p, a {
@@ -26,7 +27,8 @@ h1 {
     color: #F69A56;
     font-size: 3.4rem;
     text-align: center;
-    margin-bottom: 4rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
 }
 
 label {
@@ -72,10 +74,10 @@ input {
 .container-main {
     text-align: center;
     align-items: center;
-    height: 85vh;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    height: calc(100vh - 101px);
 }
 
 .team-list {
@@ -126,7 +128,6 @@ input {
     margin: 10px;
 }
 
-
 @media (min-width: 480px) {
     .prueba {
         display: flex;
@@ -134,7 +135,8 @@ input {
     .container-main {
         flex-basis: 50%;
         padding-right: 2rem;
-        border-right:#F69A56 solid .65rem;
+        border-right: .1rem solid #F69A56;
+        height: calc(90vh - 101px);
     }
     .teams-container {
         flex-basis: 50%;
