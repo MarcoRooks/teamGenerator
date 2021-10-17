@@ -13,45 +13,49 @@
 </head>
 
 <body>
+    <div class="prueba container">
+        <main class="container container-main">
+            <h1>Team Generator</h1>
 
-    <main class="container main">
-        <h1>Team Generator</h1>
-        <div class="main">
+            <div class="main">
 
 
-            <div class="team-list">
+                <div class="team-list">
 
-            </div>
-            <div class="name-container flex-column">
-                <label for="">Nombres</label>
-                <input type="text" name="team-name" id="team-name" placeholder="Nombre de cada integrante" autofocus>
-                <div class="container-btn">
-                    <a class="btn" href="">agregar</a>
+                </div>
+                <div class="name-container flex-column">
+                    <label for="team-name">Nombres</label>
+                    <input type="text" name="team-name" id="team-name" placeholder="Nombre de cada integrante"
+                        autofocus>
+                    <div class="container-btn">
+                        <p onclick="btnName(this)" class="btn" href="">agregar</p>
+                    </div>
+
+                </div>
+
+
+
+                <div class="size-container flex-column">
+                    <label for="">Tamaño de cada equipo</label>
+                    <input type="number" name="size-team" id="size-team" placeholder="0">
+                    <div class="container-btn">
+                        <p class="btn" href="">generar equipos</p>
+                    </div>
+
                 </div>
 
             </div>
 
 
-
-            <div class="size-container flex-column">
-                <label for="">Tamaño de cada equipo</label>
-                <input type="number" name="size-team" id="size-team" placeholder="0">
-                <div class="container-btn">
-                    <a class="btn" href="">generar equipos</a>
-                </div>
+        </main>
+        <div class="container teams-container">
+            <div class="teams">
 
             </div>
-
-        </div>
-
-
-    </main>
-    <div class="container teams-container">
-        <div class="teams">
-
         </div>
     </div>
 
+    <script src="scripts.js"></script>
 </body>
 
 </html>
