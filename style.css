@@ -72,7 +72,7 @@ input {
 .container-main {
     text-align: center;
     align-items: center;
-    height: 100vh;
+    height: 85vh;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -124,6 +124,7 @@ input {
     .container-main {
         flex-basis: 50%;
         padding-right: 2rem;
+        border-right:#F69A56 solid .65rem;
     }
     .teams-container {
         flex-basis: 50%;
