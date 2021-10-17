@@ -120,8 +120,11 @@ input {
     }
     .container-main {
         flex-basis: 50%;
-        border-right: .2rem #F69A56;
         padding-right: 2rem;
+    }
+    .main {
+        box-sizing: content-box;
+        border-right: .2rem solid #F69A56;
     }
     .teams-container {
         flex-basis: 50%;
