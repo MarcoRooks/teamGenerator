@@ -14,6 +14,9 @@ body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
 }
+.container{
+    align-items:center;
+}
 
 p, a {
     font-size: 1.4rem;
@@ -22,6 +25,8 @@ p, a {
 h1 {
     color: #F69A56;
     font-size: 3.4rem;
+    text-align: center;
+    margin-bottom: 4rem;
 }
 
 label {
@@ -64,8 +69,9 @@ input {
 
 /* main */
 
-.main, .container-main {
+.container-main {
     text-align: center;
+    align-items: center;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -110,9 +116,6 @@ input {
     min-width: none;
 }
 
-.main {
-    align-items: center;
-}
 
 @media (min-width: 480px) {
     .prueba {
@@ -121,10 +124,6 @@ input {
     .container-main {
         flex-basis: 50%;
         padding-right: 2rem;
-    }
-    .main {
-        box-sizing: content-box;
-        border-right: .2rem solid #F69A56;
     }
     .teams-container {
         flex-basis: 50%;
