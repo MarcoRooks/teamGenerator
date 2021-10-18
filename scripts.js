@@ -25,6 +25,12 @@ names.onkeydown = function (e) {
         btnName();
     }
 }
+sizeTeam.onkeydown = function (e) {
+    if (e.keyCode === 13) {
+        btnSize();
+    }
+}
+
 
 // with the 'test()' method we can find if a string is the regular expression that we indicate
 
