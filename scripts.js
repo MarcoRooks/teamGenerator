@@ -1,12 +1,11 @@
 let names = document.querySelector('#team-name');
-
-
-let team = []
+let team = [];
 let nameList = document.querySelector('.team-list');
 let teamsContainer = document.querySelector('.teams-container');
 let teamsRemove = document.querySelector('.teams');
 let sizeTeam = document.querySelector('#size-team');
 
+// loop through an array and generate a copy since the splice () method used in printList () removes a common copy and also removes the original array
 
 let copyArray = function (array) {
     let copy = [];
@@ -34,7 +33,18 @@ sizeTeam.onkeydown = function (e) {
 
 // with the 'test()' method we can find if a string is the regular expression that we indicate
 
+let btnName = function () {
+    if (/[a-zA-Z]/.test(names.value)) {
+        team.push(names.value);
+        printNames(names.value, nameList);
+    }
 
+    names.value = '';
+
+
+}
+
+// function that adds <p> with the strings to an element of the html
 let printNames = function (text, target) {
 
 
@@ -48,7 +58,7 @@ let printNames = function (text, target) {
 }
 
 
-
+// go through the array and assign teams randomly
 let printList = function (list, size) {
     let copyArr = copyArray(team);
     let numbersTeams = list.length / size;
@@ -61,7 +71,7 @@ let printList = function (list, size) {
         for (let j = 0; j < size; j++) {
             let random = Math.floor((Math.random() * copyArr.length) + 0);
 
-            console.log(list[random]);
+
             if (copyArr[random] !== undefined) {
                 printNames(copyArr[random], teams)
             }
@@ -72,20 +82,11 @@ let printList = function (list, size) {
     }
 
 }
-let btnName = function () {
-    if (/[a-zA-Z]/.test(names.value)) {
-        team.push(names.value);
-        printNames(names.value, nameList);
-    }
-
-    names.value = '';
-    console.log(team);
-
-}
 
 
 
 
+// button to generate the teams
 
 let btnSize = function () {
     teamsContainer.innerHTML = "";
