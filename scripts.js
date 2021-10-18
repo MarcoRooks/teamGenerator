@@ -1,21 +1,22 @@
+let names = document.querySelector('#team-name');
+
+
+let team = []
+
 // Allows to use the enter button to add player instead of clicking on button
 
-document.querySelector('#team-name').onkeydown = function(e) {
+names.onkeydown = function (e) {
     if (e.keyCode === 13) {
         btnName();
     }
 }
 
-
-let names = document.querySelector('#team-name');
-// // let btn = document.querySelector('.btn');
-
-let team = []
-
-
+// with the 'test()' method we can find if a string is the regular expression that we indicate
 let btnName = function () {
-    if (names.value !== '')
+    if (/[a-zA-Z]/.test(names.value)) {
         team.push(names.value)
+    }
+
     names.value = ''
     console.log(team);
 
@@ -23,7 +24,9 @@ let btnName = function () {
 }
 
 
-// btn.addEventListener("click", function (event) {
-//     event.preventDefault();
-//     
-// });
+// let printList = function (list) {
+
+
+// }
+
+
