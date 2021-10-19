@@ -20,11 +20,11 @@
             <main class="container container-main">
 
 
-                <div class="team-list">
+                <ol class="team-list">
 
 
 
-                </div>
+                </ol>
                 <div class="name-container flex-column">
                     <label for="team-name">Nombres</label>
                     <input type="text" name="team-name" id="team-name" placeholder="Nombre de cada integrante"
@@ -41,15 +41,16 @@
                     <label for="">Tamaño de cada equipo</label>
                     <input type="number" name="size-team" id="size-team" placeholder="0">
                     <div class="container-btn">
-                        <p onclick="btnSize(this)" class="btn">generar equipos</p>
+                        <a onclick="return generator(this)" href="#team-container" class="btn btnSize">generar
+                            equipos</a>
                     </div>
 
                 </div>
 
             </main>
-            <div class="container ">
+            <div class="container teams-container ">
                 <h2>Equipos</h2>
-                <div class="teams-container">
+                <div id="team-container" class="team-container">
 
                     <!-- <div class="teams"> -->
                     <!-- <div class="assignTeam">Team 1</div>

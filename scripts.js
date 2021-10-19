@@ -1,10 +1,10 @@
 let names = document.querySelector('#team-name');
 let team = [];
 let nameList = document.querySelector('.team-list');
-let teamsContainer = document.querySelector('.teams-container');
+let teamsContainer = document.querySelector('.team-container');
 let teamsRemove = document.querySelector('.teams');
 let sizeTeam = document.querySelector('#size-team');
-
+let btnSize = document.querySelector('.btnSize')
 // loop through an array and generate a copy since the splice () method used in printList () removes a common copy and also removes the original array
 
 let copyArray = function (array) {
@@ -26,7 +26,7 @@ names.onkeydown = function (e) {
 }
 sizeTeam.onkeydown = function (e) {
     if (e.keyCode === 13) {
-        btnSize();
+        generator()
     }
 }
 
@@ -36,7 +36,7 @@ sizeTeam.onkeydown = function (e) {
 let btnName = function () {
     if (/[a-zA-Z]/.test(names.value)) {
         team.push(names.value);
-        printNames(names.value, nameList);
+        printNames(`${team.length} - ${names.value}`, nameList);
     }
 
     names.value = '';
@@ -61,25 +61,35 @@ let printNames = function (text, target) {
 // go through the array and assign teams randomly
 let printList = function (list, size) {
     let copyArr = copyArray(team);
+    if (size >= list.length) {
+
+        alert("El tamaño de cada equipo es mayor que el numero de personas")
+        return
+    }
     let numbersTeams = list.length / size;
     for (i = 0; i < numbersTeams; i++) {
 
         let teams = document.createElement('div');
         teams.classList.add("teams");
         teamsContainer.appendChild(teams);
+        let numberTeams = document.createElement('h4');
+        numberTeams.innerHTML = `Team ${i + 1}`;
+        teams.appendChild(numberTeams);
 
         for (let j = 0; j < size; j++) {
             let random = Math.floor((Math.random() * copyArr.length) + 0);
 
 
             if (copyArr[random] !== undefined) {
-                printNames(copyArr[random], teams)
+                printNames(`${j + 1} - ${copyArr[random]}`, teams)
             }
 
             copyArr.splice(random, 1);
         }
 
     }
+
+
 
 }
 
@@ -88,9 +98,26 @@ let printList = function (list, size) {
 
 // button to generate the teams
 
-let btnSize = function () {
+let generator = function () {
     teamsContainer.innerHTML = "";
 
-    printList(team, sizeTeam.value)
+    printList(team, sizeTeam.value);
+
+    btnSize.addEventListener("click", function (e) {
+
+        e.preventDefault();
+        const clickHraf = e.target.attributes.href.value;
+
+        const selectHref = document.querySelector(clickHraf)
+
+        selectHref.scrollIntoView({ behavior: "smooth" })
+
+
+
+
+    })
 
 }
+
+
+
