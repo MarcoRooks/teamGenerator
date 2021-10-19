@@ -8,6 +8,7 @@ document.querySelector('#team-name').onkeydown = function(e) {
 
 let names = document.querySelector('#team-name');
 // // let btn = document.querySelector('.btn');
+const sum = document.getElementById("size-team");
 
 let team = []
 
@@ -25,3 +26,6 @@ let btnName = function () {
 //     event.preventDefault();
 //     
 // });
+
+
+
