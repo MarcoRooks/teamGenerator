@@ -1,10 +1,12 @@
 const names = document.querySelector('#team-name');
 let team = [];
 const nameList = document.querySelector('.team-list');
-const teamsContainer = document.querySelector('.team-container');
+const teamContainer = document.querySelector('.team-container');
 const teamsRemove = document.querySelector('.teams');
 const sizeTeam = document.querySelector('#size-team');
-const btnSize = document.querySelector('.btnSize')
+const btnSize = document.querySelector('.btnSize');
+
+
 // loop through an array and generate a copy since the splice () method used in printList () removes a common copy and also removes the original array
 
 
@@ -14,7 +16,7 @@ let copyArray = function (array) {
     for (e of array) {
         copy.push(e);
     }
-    return copy
+    return copy;
 }
 
 
@@ -28,7 +30,7 @@ names.onkeydown = function (e) {
 }
 sizeTeam.onkeydown = function (e) {
     if (e.keyCode === 13) {
-        generator(btnSize)
+        generator(btnSize);
     }
 }
 
@@ -77,7 +79,7 @@ let printList = function (list, size) {
 
         let teams = document.createElement('div');
         teams.classList.add("teams");
-        teamsContainer.appendChild(teams);
+        teamContainer.appendChild(teams);
         let numberTeams = document.createElement('h4');
         numberTeams.innerHTML = `Team ${i + 1}`;
         teams.appendChild(numberTeams);
@@ -87,7 +89,7 @@ let printList = function (list, size) {
 
 
             if (copyArr[random] !== undefined) {
-                printNames(`${j + 1} - ${copyArr[random]}`, teams)
+                printNames(`${j + 1} - ${copyArr[random]}`, teams);
             }
 
             copyArr.splice(random, 1);
@@ -105,25 +107,20 @@ let printList = function (list, size) {
 // button to generate the teams
 
 let generator = function (e) {
-    teamsContainer.innerHTML = "";
-    teamsContainer.id = 'team-container'
+    teamContainer.innerHTML = "";
+    const teamsContainer = document.querySelector('.teams-container');
+    teamsContainer.id = 'team-container';
 
     printList(team, sizeTeam.value);
 
 
-    const enter = document.querySelector(e.attributes.href.value)
-    enter.scrollIntoView({ behavior: "smooth" })
+    const clickHref = e.attributes.href.value;
 
-    btnSize.addEventListener("click", function (e) {
+    const selectHref = document.querySelector(clickHref);
 
-        e.preventDefault();
-        const clickHref = e.target.attributes.href.value;
+    selectHref.scrollIntoView({ behavior: "smooth" });
 
-        const selectHref = document.querySelector(clickHref)
-
-        selectHref.scrollIntoView({ behavior: "smooth" })
-
-    })
+    return false
 
 }
 
