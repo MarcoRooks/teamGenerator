@@ -46,10 +46,12 @@ input {
     outline: none;
     max-width: 30rem;
     border: .2rem solid #F69A56;
+    text-transform: capitalize;
 }
 
 .container {
     max-width: 90%;
+    max-width: 1080px;
     margin: 0 auto;
 }
 
@@ -67,9 +69,9 @@ input {
     text-decoration: none;
 }
 
-.flex-column {
+.container-father {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
 }
 
 /* main */
@@ -80,6 +82,9 @@ input {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    flex-basis: 50%;
+    flex-grow: 1;
+    min-height: calc(90vh - 8.1rem);
     height: calc(100vh - 8.1rem);
 }
 
@@ -90,8 +95,13 @@ input {
     border-radius: .6rem;
     max-width: 50rem;
     width: 100%;
-    border: .2rem solid #F69A56;
-    padding: 0;
+    outline: .3rem solid #F69A56;
+    padding: 2rem;
+}
+
+.name-container, .size-container {
+    display: flex;
+    flex-direction: column;
 }
 
 .size-container input {
@@ -107,10 +117,14 @@ input {
 /* teams */
 
 .teams-container {
+    text-align: center;
+    align-items: center;
     display: flex;
     flex-direction: column;
-    flex: wrap;
-    justify-content: space-around;
+    flex-basis: 50%;
+    flex-grow: 1;
+    min-height: calc(90vh - 8.1rem);
+    height: calc(100vh - 8.1rem);
 }
 
 .teams-container h2 {
@@ -122,7 +136,10 @@ input {
 }
 
 .team-container {
-    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    column-gap: 2rem;
 }
 
 .teams {
@@ -131,11 +148,10 @@ input {
     border-radius: .6rem;
     margin-bottom: 3.2rem;
     margin-top: 0rem;
-    /* padding-left: 2rem; */
-    /* padding-right: 2rem; */
     width: 100%;
-    max-width: 50rem;
-    flex-basis: 50%;
+    min-width: 20rem;
+    flex-basis: 47%;
+    flex-grow: 1;
 }
 
 .teams h4 {
@@ -153,31 +169,22 @@ input {
     text-align: start;
     margin-bottom: .4rem;
     margin-left: 2rem;
+    text-transform: capitalize;
 }
 
 @media (min-width: 480px) {
-    .prueba {
-        display: flex;
-    }
     .container-main {
-        flex-basis: 50%;
         padding-right: 2rem;
         border-right: .1rem solid #F69A56;
-        height: calc(90vh - 8.1rem);
+        min-height: calc(90vh - 8.1rem);
+        height: min-content;
     }
     .teams-container {
-        flex-basis: 50%;
+        max-height: calc(90vh - 8.1rem);
+        min-height: 55rem;
         padding-left: 2rem;
-        height: calc(90vh - 8.1rem);
-        justify-content: initial;
-        overflow: auto;
     }
     .team-container {
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-    }
-    .teams {
-        flex-basis: 47%;
+        overflow: auto;
     }
 }
