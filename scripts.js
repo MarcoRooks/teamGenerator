@@ -1,10 +1,10 @@
-let names = document.querySelector('#team-name');
+const names = document.querySelector('#team-name');
 let team = [];
-let nameList = document.querySelector('.team-list');
-let teamsContainer = document.querySelector('.team-container');
-let teamsRemove = document.querySelector('.teams');
-let sizeTeam = document.querySelector('#size-team');
-let btnSize = document.querySelector('.btnSize')
+const nameList = document.querySelector('.team-list');
+const teamsContainer = document.querySelector('.team-container');
+const teamsRemove = document.querySelector('.teams');
+const sizeTeam = document.querySelector('#size-team');
+const btnSize = document.querySelector('.btnSize')
 // loop through an array and generate a copy since the splice () method used in printList () removes a common copy and also removes the original array
 
 
@@ -28,7 +28,7 @@ names.onkeydown = function (e) {
 }
 sizeTeam.onkeydown = function (e) {
     if (e.keyCode === 13) {
-        generator()
+        generator(btnSize)
     }
 }
 
@@ -62,16 +62,14 @@ let printNames = function (text, target) {
 
 // go through the array and assign teams randomly
 let printList = function (list, size) {
-    size = parseInt(size)
-    console.log(typeof size)
+    size = parseInt(size);
+
     let copyArr = copyArray(team);
     if (size <= 0 || /[a-zA-Z]/.test(size)) {
 
         return alert("No introduciste un numero valido");
     }
     if (size >= list.length) {
-
-
         return alert("El tamaño de cada equipo es mayor que el numero de personas");
     }
     let numbersTeams = list.length / size;
@@ -106,24 +104,24 @@ let printList = function (list, size) {
 
 // button to generate the teams
 
-let generator = function () {
+let generator = function (e) {
     teamsContainer.innerHTML = "";
     teamsContainer.id = 'team-container'
 
     printList(team, sizeTeam.value);
 
 
+    const enter = document.querySelector(e.attributes.href.value)
+    enter.scrollIntoView({ behavior: "smooth" })
+
     btnSize.addEventListener("click", function (e) {
 
         e.preventDefault();
-        const clickHraf = e.target.attributes.href.value;
+        const clickHref = e.target.attributes.href.value;
 
-        const selectHref = document.querySelector(clickHraf)
+        const selectHref = document.querySelector(clickHref)
 
         selectHref.scrollIntoView({ behavior: "smooth" })
-
-
-
 
     })
 
