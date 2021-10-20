@@ -12,12 +12,12 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="container">
     <div>
         <h1>Team Generator</h1>
-        <div class="container-father container">
+        <div class="container-father ">
 
-            <main class="container container-main">
+            <main class=" container-main">
 
 
                 <div class="team-list">
@@ -39,7 +39,7 @@
 
                 <div class="size-container">
                     <label for="">Tamaño de cada equipo</label>
-                    <input type="number" name="size-team" id="size-team" placeholder="0">
+                    <input type="number" name="size-team" id="size-team" placeholder="0" pattern="[0-9]+">
                     <div class="container-btn">
                         <a onclick="return generator(this)" href="#team-container" class="btn btnSize">generar
                             equipos</a>
@@ -48,9 +48,9 @@
                 </div>
 
             </main>
-            <div class="container teams-container ">
+            <div class="teams-container ">
                 <h2>Equipos</h2>
-                <div id="team-container" class="team-container">
+                <div class="team-container">
 
 
                 </div>

@@ -7,6 +7,8 @@ let sizeTeam = document.querySelector('#size-team');
 let btnSize = document.querySelector('.btnSize')
 // loop through an array and generate a copy since the splice () method used in printList () removes a common copy and also removes the original array
 
+
+
 let copyArray = function (array) {
     let copy = [];
     for (e of array) {
@@ -34,7 +36,7 @@ sizeTeam.onkeydown = function (e) {
 // with the 'test()' method we can find if a string is the regular expression that we indicate
 
 let btnName = function () {
-    if (/[a-zA-Z]/.test(names.value)) {
+    if (/[a-zA-ZñÑ]/.test(names.value)) {
         team.push(names.value);
         printNames(`${team.length} - ${names.value}`, nameList);
     }
@@ -60,11 +62,17 @@ let printNames = function (text, target) {
 
 // go through the array and assign teams randomly
 let printList = function (list, size) {
+    size = parseInt(size)
+    console.log(typeof size)
     let copyArr = copyArray(team);
+    if (size <= 0 || /[a-zA-Z]/.test(size)) {
+
+        return alert("No introduciste un numero valido");
+    }
     if (size >= list.length) {
 
-        alert("El tamaño de cada equipo es mayor que el numero de personas")
-        return
+
+        return alert("El tamaño de cada equipo es mayor que el numero de personas");
     }
     let numbersTeams = list.length / size;
     for (i = 0; i < numbersTeams; i++) {
@@ -100,8 +108,10 @@ let printList = function (list, size) {
 
 let generator = function () {
     teamsContainer.innerHTML = "";
+    teamsContainer.id = 'team-container'
 
     printList(team, sizeTeam.value);
+
 
     btnSize.addEventListener("click", function (e) {
 

@@ -15,10 +15,6 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
-.container {
-    align-items: center;
-}
-
 p, a {
     font-size: 1.4rem;
 }
@@ -50,9 +46,10 @@ input {
 }
 
 .container {
-    max-width: 90%;
+    width: 90%;
     max-width: 1080px;
     margin: 0 auto;
+    align-items: center;
 }
 
 .btn {
@@ -69,9 +66,14 @@ input {
     text-decoration: none;
 }
 
+.bg {
+    background-color: #646464;
+}
+
 .container-father {
     display: flex;
     flex-wrap: wrap;
+    align-items: flex-start;
 }
 
 /* main */
@@ -84,7 +86,7 @@ input {
     justify-content: space-around;
     flex-basis: 50%;
     flex-grow: 1;
-    min-height: calc(90vh - 8.1rem);
+    /* min-height: calc(90vh - 8.1rem); */
     height: calc(100vh - 8.1rem);
 }
 
@@ -95,7 +97,7 @@ input {
     border-radius: .6rem;
     max-width: 50rem;
     width: 100%;
-    outline: .3rem solid #F69A56;
+    border: .3rem solid #F69A56;
     padding: 2rem;
 }
 
@@ -123,8 +125,8 @@ input {
     flex-direction: column;
     flex-basis: 50%;
     flex-grow: 1;
-    min-height: calc(90vh - 8.1rem);
-    height: calc(100vh - 8.1rem);
+    /* min-height: calc(90vh - 8.1rem);
+    height: calc(100vh - 8.1rem); */
 }
 
 .teams-container h2 {
@@ -186,5 +188,22 @@ input {
     }
     .team-container {
         overflow: auto;
+        padding-right: 1rem;
+    }
+    *::-webkit-scrollbar {
+        -webkit-appearance: none;
+    }
+    *::-webkit-scrollbar:vertical {
+        width: 10px;
+        border-radius: 10px;
+        background-color: #f1f2f3;
+    }
+    *::-webkit-scrollbar-thumb {
+        background-color: #797979;
+        border-radius: 20px;
+        border: 2px solid #f1f2f3;
+    }
+    *::-webkit-scrollbar-track {
+        border-radius: 10px;
     }
 }
